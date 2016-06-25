@@ -1,24 +1,14 @@
 //DEFINITIONS
-sessionStorage.lastPage = false;
-sessionStorage.output = [];
+
+
 sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
-
-//FUNCTION: Go to Next Page*********************************************************
-//var newPage = function(){
-//$('div.pagination').find('em.current').next()[0].click() //clicks the next page
-//sessionStorage.counter += 1;
-//}
-
-
-$('pagePort').load('/www/default/https://orgsync.com/59742/forms/192672/submissions?page=1', function(){ 
-(currentPage.init);
-});
 
 for (sessionStorage.counter = 1; sessionStorage.counter <= sessionStorage.nPages; sessionStorage.counter++) {
 $('pagePort').load('/www/default/https://orgsync.com/59742/forms/192672/submissions?page=' + sessionStorage.counter, function(){ 
 (currentPage.init);
 
-
-
+<script src='OrgSync-Miner/AddCurrent'</script>
 });
+<script src='OrgSync-Miner/Downloader'</script>
+
 
