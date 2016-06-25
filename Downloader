@@ -1,0 +1,9 @@
+//FUNCTION: Download Entire Array to Excel***********************************************
+var downloader = function(){
+var a         = document.createElement('a');
+a.href        = 'data:attachment/csv,' + sessionStorage.output;
+a.target      = '_blank';
+a.download    = 'links' + sessionStorage.counter +  '.csv';
+document.body.appendChild(a);
+a.click();
+}
