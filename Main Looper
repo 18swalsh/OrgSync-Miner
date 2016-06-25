@@ -1,5 +1,10 @@
+//DEFINITIONS
+sessionStorage.lastPage = false;
+sessionStorage.output = [];
+sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
+
 //FUNCTION: Add Current Page to the Array*******************************************
-var adder = function(){
+adder = function(){
  var ary = $('h4:first-child > a').map(function() {
 	return this.href;
 }).toArray();
@@ -23,15 +28,16 @@ document.body.appendChild(a);
 a.click();
 }
 
-//DEFINITIONS
-sessionStorage.lastPage = false;
-sessionStorage.output = [];
-sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
-
+$('pagePort').load('/www/default/https://orgsync.com/59742/forms/192672/submissions?page=1', function(){ 
+(currentPage.init);
+});
 
 for (sessionStorage.counter = 1; sessionStorage.counter <= sessionStorage.nPages; sessionStorage.counter++) {
+$('pagePort').load('/www/default/https://orgsync.com/59742/forms/192672/submissions?page=' + sessionStorage.counter, function(){ 
+(currentPage.init);
+});
 adder();
-newPage();
+//newPage();
 if (sessionStorage.counter >=6) {
 	break;
 }
