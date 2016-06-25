@@ -1,0 +1,6 @@
+//FUNCTION: Add Current Page to the Array*******************************************
+adder = function(){
+ var ary = $('h4:first-child > a').map(function() {
+	return this.href;
+}).toArray();
+	sessionStorage.output += ary;
