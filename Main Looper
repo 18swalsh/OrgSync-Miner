@@ -1,9 +1,3 @@
-//DEFINITIONS
-sessionStorage.lastPage = false;
-sessionStorage.output = [];
-sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
-
-
 //FUNCTION: Add Current Page to the Array*******************************************
 var adder = function(){
 var ary = $('h4:first-child > a').map(function() {
@@ -29,7 +23,13 @@ document.body.appendChild(a);
 a.click();
 }
 
-for (sessionStorage.counter = 1; sessionStorage.counter <= sessionStorage.nPages + 1; sessionStorage.counter++) {
+//DEFINITIONS
+sessionStorage.lastPage = false;
+sessionStorage.output = [];
+sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
+
+
+for (sessionStorage.counter = 1; sessionStorage.counter <= sessionStorage.nPages; sessionStorage.counter++) {
 adder();
 newPage();
 }
