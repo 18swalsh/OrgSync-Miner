@@ -1,0 +1,36 @@
+//DEFINITIONS
+sessionStorage.lastPage = false;
+sessionStorage.output = [];
+sessionStorage.nPages = $('div.action-row.bottom > div.pagination > a').size();
+
+
+//FUNCTION: Add Current Page to the Array*******************************************
+var adder = function(){
+var ary = $('h4:first-child > a').map(function() {
+	return this.href;
+}).toArray();
+	sessionStorage.output += ary;
+}
+
+//FUNCTION: Go to Next Page*********************************************************
+var newPage = function(){
+$('div.pagination').find('em.current').next()[0].click() //clicks the next page
+sessionStorage.counter += 1;
+}
+
+
+//FUNCTION: Download Entire Array to Excel***********************************************
+var downloader = function(){
+var a         = document.createElement('a');
+a.href        = 'data:attachment/csv,' + output;
+a.target      = '_blank';
+a.download    = 'links' + sessionStorage.counter +  '.csv';
+document.body.appendChild(a);
+a.click();
+}
+
+for (sessionStorage.counter = 1; sessionStorage.counter <= sessionStorage.nPages + 1; sessionStorage.counter++) {
+adder();
+newPage();
+}
+downloader();
