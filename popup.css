@@ -1,0 +1,20 @@
+.btn {
+  background: #3498db;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.center{
+    text-align: center;
+}
+
